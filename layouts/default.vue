@@ -1,8 +1,8 @@
 <template>
   <div class="main" :class="{hover: $store.state.hover}">
-    <button v-if="$route.name!='data'" @click="previous" class="previous">[Previous]</button>
+    <button v-if="$store.state.pages.includes($route.name)" @click="previous" class="previous">[Previous]</button>
     <nuxt/>
-    <button v-if="$route.name!='data'" @click="next" class="next">[Next]</button>
+    <button v-if="$store.state.pages.includes($route.name)" @click="next" class="next">[Next]</button>
   </div>
 </template>
 <script>
