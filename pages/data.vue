@@ -3,7 +3,7 @@
   <h1>Ethnographic Sruvey</h1>
   <div class="chart demographics">
     <h2>Demographics</h2>
-    <v-donut-chart :data="{
+    <v-donut-chart class="chartI demographics" :data="{
       datasets: [
       {
           data: [4, 1],
@@ -100,9 +100,15 @@ export default {
       text-align: center;
     }
     .demographics{
-      flex-basis: 100%;
+      flex-basis: 80%;
       padding: 2em;
-      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .chartI {
+      flex-basis: 100%;
     }
   }
 </style>
