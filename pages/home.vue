@@ -12,7 +12,7 @@ export default {
       const name = this.$route.name
       let index = pages.indexOf(name)
       if(index==pages.length-1) index = -1
-      this.$router.replace(pages[index+1])
+      this.$router.replace('/'+pages[index+1])
     }
   }
 }
