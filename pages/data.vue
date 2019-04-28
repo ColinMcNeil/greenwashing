@@ -3,26 +3,20 @@
   <h1>Ethnographic Sruvey</h1>
   <div class="chart demographics">
     <h2>Demographics</h2>
-    <v-donut-chart class="chartI demographics" :data="{
+    <v-donut-chart class="chartI location" :data="{
       datasets: [
       {
-          data: [4, 1],
+          data: [20, 8],
           backgroundColor: ['#75b9be','#f2c078'],
           labels: ['Male', 'Female'],
           label: 'Gender'
       },
       {
-          data: [3, 1, 1],
+          data: [23, 1, 2, 1, 1],
           backgroundColor: ['#f2c078','#faedca', '#c1dbb3'],
-          labels: ['CT', 'TA', 'MO'],
+          labels: ['CT', 'Texas', 'Midwest', 'New York', 'Puerto Rico'],
           label: 'Location'
-      },
-      {
-          data: [1, 2, 0, 2],
-          backgroundColor: ['#f2c078','#faedca', '#c1dbb3'],
-          labels: ['<18', '18-25', '25-39', '40+'],
-          label: 'Age'
-      },
+      }
       ],
     }" 
     :options="{
@@ -37,35 +31,163 @@
         }
     }
   }"/>
+  <v-bar-chart class="chartI age" :data="{
+      datasets: [
+      {
+          data: [2, 0, 9, 8, 0, 1, 3, 0, 0, 1, 1, 1, 1 ,1, 0],
+          backgroundColor: '#47eb4a',
+          label: 'Age',
+          lineTension: 0.1
+      }
+      ],
+      labels: [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 48, 50, 55, 56, '57+'],
+    }"/>
   </div>
   
   <div class="chart">
-    <h2>Would you spend more on a product if it were environmentally friendly?</h2>
-    <v-donut-chart :data="{
+    <h2>What major or job position do you fill?</h2>
+    <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [1, 1, 1, 1],
+          data: [14, 6, 4, 3, 1],
+          backgroundColor: greens
+      }],
+      labels: [
+          'Engineering/Math',
+          'Business',
+          'Humanities',
+          'Arts',
+          'Undecided'
+      ],
+    }"/>
+  </div>
+  <div class="chart">
+    <h2>Have you heard of Greenwashing?</h2>
+    <v-donut-chart class="chartI" :data="{
+      datasets: [{
+          data: [8, 18, 2],
+          backgroundColor: greens
+      }],
+      labels: [
+          'Yes',
+          'No',
+          'Heard of it',
+      ],
+      
+    }"/>
+    <h5>Out of our results, 6 people responded that it is a method of cleaning.</h5>
+  </div>
+  <div class="chart">
+    <h2>What makes a product natural according to the FDA?</h2>
+    <v-bar-chart class="chartI" :data="{
+      datasets: [{
+          data: [6, 6, 4, 6, 6],
+          backgroundColor: greens[3],
+          label: 'Response'
+      }],
+      labels: [
+          '30% Natural Ingredients',
+          '90% Natural Ingredients',
+          '100% Natural Ingredients',
+          'Not Sure',
+          'Nothing'
+      ],
+    }" :options="{
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+  }"/>
+  </div>
+  <div class="chart">
+    <h2>Can you explain what makes a product natural/green?</h2>
+    <v-donut-chart class="chartI" :data="{
+      datasets: [{
+          data: [13, 10, 1, 2, 2],
+          backgroundColor: greens
+      }],
+      labels: [
+          'Contains all natural or green ingredients. Not man made.',
+          'Contains no industrialized chemicals.',
+          'Contains only organic material.',
+          'If it looks natural to me.',
+          'All Natural is an impossible label to use, and is unrelated to eco-friendliness.'
+      ],
+    }"/>
+  </div>
+  <div class="chart">
+    <h2>Do you think all natural food is better for the environment?</h2>
+    <v-donut-chart class="chartI" :data="{
+      datasets: [{
+          data: [13, 12, 3],
+          backgroundColor: greens
+      }],
+      labels: [
+          'Yes',
+          'No',
+          'Depends on the product'
+      ],
+    }"/>
+  </div>
+  <div class="chart">
+    <h2>Why are people inclined to by more eco or natural products?</h2>
+    <v-donut-chart class="chartI" :data="{
+      datasets: [{
+          data: [10, 9, 5, 4],
+          backgroundColor: greens
+      }],
+      labels: [
+          'They feel better about themselves.',
+          `They assume it's healthier.`,
+          'They care about the environment.',
+          'They have been mislead by marketing to do it.'
+      ],
+    }"/>
+  </div>
+  <div class="chart">
+    <h2>Would pick a product if it were environmentally friendly at the same cost?</h2>
+    <v-donut-chart class="chartI" :data="{
+      datasets: [{
+          data: [20, 3, 5],
           backgroundColor: ['#F00','#86c7f3', '#00F']
       }],
       labels: [
           'Yes',
           'No',
-          'Probably depending on the product',
-          'I would if I knew for sure it was'
+          'Only if I know for sure',
       ],
     }"/>
   </div>
   <div class="chart">
     <h2>Would you spend more on a product if it were environmentally friendly?</h2>
-    <v-donut-chart :data="{
+    <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [1, 1, 1, 1],
+          data: [14, 8, 6],
           backgroundColor: ['#F00','#86c7f3', '#00F']
       }],
       labels: [
           'Yes',
           'No',
-          'Probably depending on the product',
-          'I would if I knew for sure it was'
+          'Depends on the product'
+      ],
+    }"/>
+  </div>
+  <div class="chart">
+    <h2>Are you less likely to believe a product is all natural 
+      when told so by a big name corporation, say Coca-Cola, vs a small 
+      family owned business?
+    </h2>
+    <v-donut-chart class="chartI" :data="{
+      datasets: [{
+          data: [2, 5, 1],
+          backgroundColor: ['#F00','#86c7f3', '#00F']
+      }],
+      labels: [
+          'Yes',
+          'No',
+          'MORE inclined to believe them'
       ],
     }"/>
   </div>
@@ -74,12 +196,18 @@
 <script>
 import VDonutChart from '~/components/VDonutChart.vue'
 import VLineChart from '~/components/VLineChart.vue'
+import VBarChart from '~/components/VBarChart.vue'
 
 export default {
   components: {
     VDonutChart,
-    VLineChart
-  }
+    VLineChart,
+    VBarChart
+  },
+  data: ()=>({
+    blues: ['#1d70a2','#2892d7', '#1b4353', '#6daedb', '#173753'],
+    greens: ['#00b760','#00b2a0', '#96bc98', '#68a384', '#3f8253']
+    })
 }
 </script>
 <style lang="scss" scoped>
@@ -95,20 +223,30 @@ export default {
     * {
       flex-basis: 45%;
     }
-    h1, h2 {
+    h1, h2, h5 {
       flex-basis: 100%;
       text-align: center;
     }
+    .chartI {
+      flex-basis: 80%;
+      width: 80%;
+      max-width: 600px;
+      min-width: 300px;
+      margin-left: 2em;
+    }
     .demographics{
       flex-basis: 80%;
+      max-width: 80%;
       padding: 2em;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      flex-direction: column;
+      flex-wrap: wrap;
+      .chartI {
+        flex: 0 2 40%;
+        min-width: 250px;
+      }
     }
-    .chartI {
-      flex-basis: 100%;
-    }
+    
   }
 </style>
