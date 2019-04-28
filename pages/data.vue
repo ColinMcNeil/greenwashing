@@ -147,11 +147,11 @@
     }"/>
   </div>
   <div class="chart">
-    <h2>Would pick a product if it were environmentally friendly at the same cost?</h2>
+    <h2>Would you pick a product if it were environmentally friendly at the same cost?</h2>
     <v-donut-chart class="chartI" :data="{
       datasets: [{
           data: [20, 3, 5],
-          backgroundColor: ['#F00','#86c7f3', '#00F']
+          backgroundColor: greens
       }],
       labels: [
           'Yes',
@@ -165,7 +165,7 @@
     <v-donut-chart class="chartI" :data="{
       datasets: [{
           data: [14, 8, 6],
-          backgroundColor: ['#F00','#86c7f3', '#00F']
+          backgroundColor: greens
       }],
       labels: [
           'Yes',
@@ -182,7 +182,7 @@
     <v-donut-chart class="chartI" :data="{
       datasets: [{
           data: [2, 5, 1],
-          backgroundColor: ['#F00','#86c7f3', '#00F']
+          backgroundColor: greens
       }],
       labels: [
           'Yes',
