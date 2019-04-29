@@ -58,6 +58,9 @@
           'Arts',
           'Undecided'
       ],
+    }"
+    :options="{
+      tooltips
     }"/>
   </div>
   <div class="chart">
@@ -73,6 +76,9 @@
           'Heard of it',
       ],
       
+    }"
+    :options="{
+      tooltips
     }"/>
     <h5>Out of our results, 6 people responded that it is a method of cleaning.</h5>
   </div>
@@ -98,7 +104,7 @@
                     beginAtZero: true
                 }
             }]
-        }
+        },
   }"/>
   </div>
   <div class="chart">
@@ -115,6 +121,9 @@
           'If it looks natural to me.',
           'All Natural is an impossible label to use, and is unrelated to eco-friendliness.'
       ],
+    }"
+    :options="{
+      tooltips
     }"/>
   </div>
   <div class="chart">
@@ -129,6 +138,9 @@
           'No',
           'Depends on the product'
       ],
+    }"
+    :options="{
+      tooltips
     }"/>
   </div>
   <div class="chart">
@@ -144,6 +156,8 @@
           'They care about the environment.',
           'They have been mislead by marketing to do it.'
       ],
+    }" :options="{
+      tooltips
     }"/>
   </div>
   <div class="chart">
@@ -158,6 +172,9 @@
           'No',
           'Only if I know for sure',
       ],
+    }" 
+    :options="{
+      tooltips
     }"/>
   </div>
   <div class="chart">
@@ -172,6 +189,9 @@
           'No',
           'Depends on the product'
       ],
+    }"
+    :options="{
+      tooltips
     }"/>
   </div>
   <div class="chart">
@@ -189,6 +209,9 @@
           'No',
           'MORE inclined to believe them'
       ],
+    }"
+    :options="{
+      tooltips
     }"/>
   </div>
 </div>
@@ -206,8 +229,23 @@ export default {
   },
   data: ()=>({
     blues: ['#1d70a2','#2892d7', '#1b4353', '#6daedb', '#173753'],
-    greens: ['#00b760','#00b2a0', '#96bc98', '#68a384', '#3f8253']
-    })
+    greens: ['#00b760','#00b2a0', '#96bc98', '#68a384', '#3f8253'],
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var dataset = data.datasets[tooltipItem.datasetIndex];
+          var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+          var total = meta.total;
+          var currentValue = dataset.data[tooltipItem.index];
+          var percentage = parseFloat((currentValue/total*100).toFixed(1));
+          return currentValue + ' (' + percentage + '%)';
+        },
+        title: function(tooltipItem, data) {
+          return data.labels[tooltipItem[0].index];
+        }
+      }
+    }
+  })
 }
 </script>
 <style lang="scss" scoped>

@@ -1,8 +1,8 @@
 <template>
   <div class="term" :class="{hovered}">
     <div class="text" @mouseover="hovered = true" @mouseleave="hovered = false">
-      <h1 v-show="!hovered">{{before}}</h1>
-      <h1 v-show="hovered">{{after}}</h1>
+      <h2 v-show="!hovered">{{before}}</h2>
+      <h3 v-show="hovered">{{after}}</h3>
       <h4 v-show="hovered">{{subtext}}</h4>
     </div>
   </div>
@@ -26,7 +26,7 @@ export default {
 .text {
   
   &:hover{
-   h1, h4{
+   h1, h2, h3, h4{
      color: yellow;
    }
  } 
