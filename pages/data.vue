@@ -3,16 +3,17 @@
   <h1>Ethnographic Sruvey</h1>
   <div class="chart demographics">
     <h2>Demographics</h2>
+    <div class="chartI">
     <v-donut-chart class="chartI location" :data="{
       datasets: [
       {
-          data: [20, 8],
+          data: [22, 8],
           backgroundColor: ['#75b9be','#f2c078'],
           labels: ['Male', 'Female'],
           label: 'Gender'
       },
       {
-          data: [23, 1, 2, 1, 1],
+          data: [25, 1, 2, 1, 1],
           backgroundColor: ['#f2c078','#faedca', '#c1dbb3'],
           labels: ['CT', 'Texas', 'Midwest', 'New York', 'Puerto Rico'],
           label: 'Location'
@@ -31,10 +32,11 @@
         }
     }
   }"/>
+  <h4>Gender (top) & Location (bottom)</h4></div>
   <v-bar-chart class="chartI age" :data="{
       datasets: [
       {
-          data: [2, 0, 9, 8, 0, 1, 3, 0, 0, 1, 1, 1, 1 ,1, 0],
+          data: [2, 0, 9, 8, 0, 1, 3, 0, 0, 3, 1, 1, 1 ,1, 0],
           backgroundColor: '#47eb4a',
           label: 'Age',
           lineTension: 0.1
@@ -48,7 +50,7 @@
     <h2>What major or job position do you fill?</h2>
     <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [14, 6, 4, 3, 1],
+          data: [16, 6, 4, 3, 1],
           backgroundColor: greens
       }],
       labels: [
@@ -67,7 +69,7 @@
     <h2>Have you heard of Greenwashing?</h2>
     <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [8, 18, 2],
+          data: [8, 20, 2],
           backgroundColor: greens
       }],
       labels: [
@@ -86,7 +88,7 @@
     <h2>What makes a product natural according to the FDA?</h2>
     <v-bar-chart class="chartI" :data="{
       datasets: [{
-          data: [6, 6, 4, 6, 6],
+          data: [8, 6, 4, 6, 6],
           backgroundColor: greens[3],
           label: 'Response'
       }],
@@ -111,7 +113,7 @@
     <h2>Can you explain what makes a product natural/green?</h2>
     <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [13, 10, 1, 2, 2],
+          data: [13, 11, 1, 3, 2],
           backgroundColor: greens
       }],
       labels: [
@@ -130,7 +132,7 @@
     <h2>Do you think all natural food is better for the environment?</h2>
     <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [13, 12, 3],
+          data: [13, 14, 3],
           backgroundColor: greens
       }],
       labels: [
@@ -147,7 +149,7 @@
     <h2>Why are people inclined to by more eco or natural products?</h2>
     <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [10, 9, 5, 4],
+          data: [10, 10, 6, 4],
           backgroundColor: greens
       }],
       labels: [
@@ -164,7 +166,7 @@
     <h2>Would you pick a product if it were environmentally friendly at the same cost?</h2>
     <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [20, 3, 5],
+          data: [22, 3, 5],
           backgroundColor: greens
       }],
       labels: [
@@ -181,7 +183,7 @@
     <h2>Would you spend more on a product if it were environmentally friendly?</h2>
     <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [14, 8, 6],
+          data: [16, 8, 6],
           backgroundColor: greens
       }],
       labels: [
@@ -201,13 +203,13 @@
     </h2>
     <v-donut-chart class="chartI" :data="{
       datasets: [{
-          data: [2, 5, 1],
+          data: [18, 10, 2],
           backgroundColor: greens
       }],
       labels: [
-          'Yes',
-          'No',
-          'MORE inclined to believe them'
+          'More inclined to believe smaller corporation',
+          'More inclined to believe larger corporation',
+          'Neither'
       ],
     }"
     :options="{
