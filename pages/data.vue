@@ -197,7 +197,7 @@
     }"/>
   </div>
   <div class="chart">
-    <h2>Are you less likely to believe a product is all natural 
+    <h2>Are you less likely to believe a product is green 
       when told so by a big name corporation, say Coca-Cola, vs a small 
       family owned business?
     </h2>
