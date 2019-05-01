@@ -1,7 +1,11 @@
 <template>
   <div class="container home">
     <h1>Greenwashing</h1>
-    <h2><nuxt-link to="data">View Data.</nuxt-link> <a @click="next">View Products.</a></h2>
+    <h2>
+      <nuxt-link to="data">Data</nuxt-link> 
+      <a @click="next">Products</a>
+      <nuxt-link to="terms">Terms</nuxt-link> 
+    </h2>
   </div>
 </template>
 <script>
@@ -77,13 +81,14 @@ $bg-height: 50px;
       border-radius: 3px;
       text-decoration: none;
       color: black;
+      margin: 0 1em;
       &:hover{
         background: $green;
         color: white;
         cursor: pointer;
       }
       &:first-child{
-        margin-right: 2em;
+        
         &:hover {
           background: $brown;
           color: yellow;

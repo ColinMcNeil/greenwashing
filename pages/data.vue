@@ -259,6 +259,7 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     overflow: auto;
+    padding-bottom: 10px;
     height: 100%;
     * {
       flex-basis: 45%;
