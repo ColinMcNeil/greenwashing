@@ -35,10 +35,10 @@ export default {
   top: 3%;
   left: 50%;
   background: rgb(0, 117, 6);
-  width: 70vw;
-  height: 65vw;
-  margin-left: -35vw;
-  // margin-top: -10%;
+  width: 100vh;
+  height: 100vh;
+  margin-left: -50vh;
+  margin-top: -25vh;
   transform-origin: 50% 48%;
   border-radius: 43%;
   animation: drift 3000ms infinite linear;
