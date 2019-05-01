@@ -1,11 +1,15 @@
 <template>
   <div class="container home">
+    <div class='wave -one'></div>
+    <div class='wave -two'></div>
+    <div class='wave -three'></div>
     <h1>Greenwashing</h1>
     <h2>
       <nuxt-link to="data">Data</nuxt-link> 
       <a @click="next">Products</a>
       <nuxt-link to="terms">Terms</nuxt-link> 
     </h2>
+
   </div>
 </template>
 <script>
@@ -23,77 +27,88 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '~/assets/sass/_variables.scss';
-$bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC";
-$bg-width: 50px;
-$bg-height: 50px;
 
-/* Animations */
-@-webkit-keyframes bg-scrolling-reverse {
-  100% { background-position: $bg-width $bg-height; }
+.wave {
+  opacity: .4;
+  position: absolute;
+  z-index: 0;
+  top: 3%;
+  left: 50%;
+  background: rgb(0, 117, 6);
+  width: 70vw;
+  height: 65vw;
+  margin-left: -35vw;
+  // margin-top: -10%;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
 }
-@-moz-keyframes    bg-scrolling-reverse {
-  100% { background-position: $bg-width $bg-height; }
+.wave.-three {
+  animation: drift 5000ms infinite linear;
+  background: rgb(55, 150, 60);
 }
-@-o-keyframes      bg-scrolling-reverse {
-  100% { background-position: $bg-width $bg-height; }
+.wave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: .1;
+  background: rgb(54, 211, 34);
 }
-@keyframes         bg-scrolling-reverse {
-  100% { background-position: $bg-width $bg-height; }
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
 }
-
-@-webkit-keyframes bg-scrolling {
-  0% { background-position: $bg-width $bg-height; }
+.title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  line-height: 300px;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: .4em;
+  font-size: 24px;
+  text-shadow: 0 1px 0 rgba(black, .1);
+  text-indent: .3em;
 }
-@-moz-keyframes    bg-scrolling {
-  0% { background-position: $bg-width $bg-height; }
-}
-@-o-keyframes      bg-scrolling {
-  0% { background-position: $bg-width $bg-height; }
-}
-@keyframes         bg-scrolling {
-  0% { background-position: $bg-width $bg-height; }
-}
-  .container.home {
-    width: 100vw;
-    height: 100vh;
-    background: url($bg-url) repeat 0 0;
-    -webkit-animation: bg-scrolling-reverse .92s infinite; /* Safari 4+ */
-    -moz-animation:    bg-scrolling-reverse .92s infinite; /* Fx 5+ */
-    -o-animation:      bg-scrolling-reverse .92s infinite; /* Opera 12+ */
-    animation:         bg-scrolling-reverse .92s infinite; /* IE 10+ */
-    -webkit-animation-timing-function: linear;
-    -moz-animation-timing-function:    linear;
-    -o-animation-timing-function:      linear;
-    animation-timing-function:         linear;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    h1 {
-      margin: 0;
-      font-size: 5em;
-      color: $dark-green;
+.container.home {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  * {
+    z-index: 5;
+  }
+  h1 {
+    margin: 0;
+    font-size: 5em;
+    color: white;
+  }
+  h2 > * {
+    transition: ease 0.2s all;
+    padding: 0.5em;
+    border-radius: 3px;
+    text-decoration: none;
+    color: rgb(253, 253, 253);
+    margin: 0 1em;
+    &:hover{
+      background: $green;
+      color: white;
+      cursor: pointer;
     }
-    h2 > * {
-      transition: ease 0.2s all;
-      padding: 0.5em;
-      border-radius: 3px;
-      text-decoration: none;
-      color: black;
-      margin: 0 1em;
-      &:hover{
-        background: $green;
-        color: white;
-        cursor: pointer;
-      }
-      &:first-child{
-        
-        &:hover {
-          background: $brown;
-          color: yellow;
-        }
+    &:first-child{
+      
+      &:hover {
+        background: $brown;
+        color: yellow;
       }
     }
   }
-  </style>
+}
+</style>
